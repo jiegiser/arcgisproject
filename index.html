@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet" />
+<!-- 调用ArcGIS API -->
+    <link rel="stylesheet" type="text/css" href="http://192.168.1.88/jsapi/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.1.88/jsapi/esri/css/esri.css" />
+    <script src="http://192.168.1.88/jsapi/init.js" type="text/javascript"></script>
+    <script src="lib/js/baseMap.js"></script>
+<!--  -->
+    <title>test</title>
+    <style>
+        #mapDiv {
+        height:700px;
+         /*width:800px;*/
+         margin-left:8px;
+        }
+    </style>
+</head>
+<body class="claro">
+        <div class="row ">
+          <div class="col-xs-8" id="mapDiv"></div>
+           <div class="panel panel-primary col-xs-3" id="query" style="height:700px;">  
+               <h3>空间查询</h3>
+               <div class="row ">
+            <select id="task" class="select">
+              <option value="statesTask">基本农田保护图斑</option>
+              <option value="riversTask">宗地 </option>
+            </select>
+                    <br />                   
+             <button data-dojo-type="dijit/form/Button">点</button>
+             <button data-dojo-type="dijit/form/Button">线</button>
+             <button data-dojo-type="dijit/form/Button">多边形</button>
+             <button data-dojo-type="dijit/form/Button">取消查询</button>
+                    </div> 
+               <hr />
+               <h3>属性查询</h3>
+行政区名称:<input class="nm" type="text">
+             <input id="btn" type="button" value="查询">
+             <button id="clearQuery">清除查询</button>
+              </div> 
+        </div>
+
+
+</body>
+</html>

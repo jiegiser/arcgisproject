@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性查询</title>
+    <link  rel="stylesheet"  type="text/css" href="http://localhost/arcgis_js_api_3.10/library/3.10/3.10compact/js/dojo/dijit/themes/tundra/tundra.css"/>
+    <link  rel="stylesheet"  type="text/css" href="http://localhost/arcgis_js_api_3.10/library/3.10/3.10compact/js/esri/css/esri.css" />
+<!--    <script  type="text/javascript"  src="build/main_2D.js"></script>-->
+    <script  type="text/javascript"  src="http://localhost/arcgis_js_api_3.10/library/3.10/3.10compact/init.js"></script>
+    <script>
+
+        var map;
+        require(["dojo/_base/lang", "esri/map", "dojo/query", "dojo/on", "dojo/dom", "esri/lang",
+            "esri/layers/ArcGISTiledMapServiceLayer",
+            "esri/tasks/FindTask",
+            "esri/tasks/FindParameters",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/symbols/SimpleFillSymbol",
+            "esri/Color",
+            "esri/graphic",
+            "dojo/domReady!"
+            ],
+                function (lang, Map, query, on, dom, esriLang, ArcGISTiledMapServiceLayer, FindTask, FindParameters, SimpleLineSymbol, SimpleFillSymbol, Color, Graphic) {
+                    map = new Map("mapDiv");
+                    var layer = new ArcGISTiledMapServiceLayer("http://192.168.1.88:6080/arcgis/rest/services/JYG1/JCDL/MapServer");
+                    map.addLayer(layer);
+                    query("#btn").on("click", function () {
+                        //获得输入的名称
+                        var name = query(".nm")[0].value;
+                        //实例化查询参数
+                        var findParams = new FindParameters();
+                        findParams.returnGeometry = true;
+                        findParams.layerIds = [1];
+                        findParams.searchFields = ["XZQMC"];
+                        findParams.searchText = name;
+                        //实例化查询对象
+                        var findTask = new FindTask("http://192.168.1.88:6080/arcgis/rest/services/JYG1/JCDL/MapServer");
+                        //进行查询
+                        findTask.execute(findParams, showFindResult)
+                    });
+                    on(dom.byId("clearQuery"), "click", lang.hitch(this, function () {
+                        this.map.graphics.clear();
+                    }));
+                    function showFindResult(queryResult) {
+                        if (queryResult.length == 0) {
+                            alert("没有该元素");
+                            return;
+                        }
+                        for (var i = 0; i < queryResult.length; i++) {
+                            //获得该图形的形状
+                            var feature = queryResult[i].feature;
+                            var geometry = feature.geometry;
+                            //定义高亮图形的符号
+                            //1.定义面的边界线符号
+                            var outline = new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASHDOT, new Color([255, 0, 0]), 1);
+                            //2.定义面符号
+                            var PolygonSymbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, outline, new Color([0, 255, 0, 1]));
+                            //创建客户端图形
+                            var graphic = new Graphic(geometry, PolygonSymbol);
+                            //将客户端图形添加到map中
+                            map.graphics.add(graphic);
+                        }
+                    }
+
+
+                });
+
+    </script>
+</head>
+<body class="tundra">
+<div id="mapDiv" style="width:900px; height:580px; border:1px solid #000;"></div>
+    行政区名称:<input class="nm" type="text">
+    <input id="btn" type="button" value="查询">
+    <button id="clearQuery">清除查询</button>
+</body>
+</html>
