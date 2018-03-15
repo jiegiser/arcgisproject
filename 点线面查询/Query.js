@@ -1,4 +1,4 @@
-﻿var map, tb, statesTask, riversTask, citiesTask, 
+﻿var map, tb, statesTask, riversTask, citiesTask;
 var statesInfoTemplate, riversInfoTemplate, citiesInfoTemplate;
 var pointSym, lineSym, polygonSym;
 

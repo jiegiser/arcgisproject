@@ -1,0 +1,303 @@
+body {
+  /*padding-top: 50px;*/
+}
+
+.navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.navbar-brand-image {
+  height: 32px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+.starter-template {
+  padding: 15px 15px;
+  text-align: center;
+}
+.navbar-inverse .navbar-brand {
+	font-size: 16px;
+	color: #fff;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.jumbotron {
+	margin-top: 30px;
+	background: url('../images/') no-repeat left center;
+}
+
+/*h4 {
+  margin-top: 25px;
+}
+*/
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+      #mapDiv {
+        min-height: 50px;
+        height:720px; 
+      }
+      #myTabContent {
+        margin-top:   5px;
+        margin-right: 5px;
+        margin-left:  5px;
+        margin-bottom:5px;
+      }
+      #HomeButton {
+       position: absolute;
+       top: 95px;
+       left: 20px;
+       z-index: 50;
+     }
+      #LocateButton {
+      position: absolute;
+      top: 135px;
+      left: 20px;
+      z-index: 50;
+     }
+
+      .row
+      {
+          margin-top:10px; 
+          margin-bottom:10px;
+       }
+
+      .row-map {
+        /*background: #eee;*/
+        /*margin-top: 5px;*/
+      
+      }
+
+      [class*="col-"] {
+        /*background-color: #eee;*/
+        border: 0px solid #E7E7E7;
+        text-align: center;
+      }
+
+      .bg-none{
+        background: none;
+        border: none;
+      }
+
+      .no-col-padding {
+        padding: 0;
+      }
+
+      /*.tab-content {
+        margin-top: 5px;
+      }*/
+
+        .container.main
+        {
+            padding-bottom: 3px;
+        }
+
+        .dropdown-menu
+        {
+            min-width: 100px;
+        }
+
+
+        /*routeGrid*/
+        #grid
+        {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .dgrid-row
+        {
+            padding: 5px;
+            margin-bottom: 5px;
+            min-height: 60px;
+            border-bottom: solid 1px #C0C0C0;
+        }
+
+        .dgrid-row .detail div
+        {
+            cursor: pointer;
+        }
+
+        .dgrid-row .detail div:hover
+        {
+            text-decoration: underline;
+        }
+
+        .distance
+        {
+            float: right;
+            color: #C0C0C0;
+            font-style: italic;
+        }
+
+
+        path[data-classbreak="lineBreak0"]
+        {
+            stroke: rgb(63, 94, 241);
+            stroke-width: 1pt;
+            stroke-opacity: 0.55;
+            fill: none;
+        }
+
+        path[data-classbreak="lineBreak1"]
+        {
+            stroke: rgb(63, 94, 241);
+            stroke-width: 2pt;
+            stroke-opacity: 0.55;
+            fill:none;
+        }
+
+        path[data-classbreak="lineBreak2"]
+        {
+            stroke: rgb(63, 94, 241);
+            stroke-width: 3pt;
+            stroke-opacity: 0.55;
+            fill:none;
+        }
+
+        path[data-classbreak="lineBreak3"]
+        {
+            stroke: rgb(63, 94, 241);
+            stroke-width: 5pt;
+            stroke-opacity: 0.55;
+            fill:none;
+        }
+
+
+
+        path[data-classbreak="pointBreak0"]
+        {
+            /*background-color: rgb(255, 0, 220);
+            fill: rgb(255, 0, 220);*/
+            fill: none;
+            stroke: rgb(0, 38, 255);
+            stroke-width: 8pt;
+            stroke-opacity: 0.65;
+            stroke-linecap: round;
+            stroke-linejoin: round; 
+        }
+        path[data-classbreak= "pointBreak1"]
+        {
+            fill: none;
+            stroke: rgb(0, 0, 0);
+            stroke-opacity: 0.65;
+            stroke-width: 9pt;
+            stroke-linecap: round;
+            stroke-linejoin: round; 
+            
+        }
+        path[data-classbreak="pointBreak2"]
+        {
+            
+            fill: none;
+            stroke: rgb(0, 255, 33);
+            stroke-opacity: 0.85;
+            stroke-width: 10pt;
+            stroke-linecap: round;
+            stroke-linejoin: round; 
+           
+        }
+
+
+
+
+    path[data-classbreak="areaBreak0"] {
+        stroke: rgb(255, 245, 220);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(255, 215, 120);
+        fill-opacity: 0.6;
+    }
+
+    path[data-classbreak="areaBreak1"] {
+        stroke: rgb(255, 233, 185);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(255, 193, 60);
+        fill-opacity: 0.6;
+    }
+
+    path[data-classbreak="areaBreak2"] {
+        stroke: rgb(255, 220, 150);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(255, 170, 0);
+        fill-opacity: 0.6;
+    }
+
+    path[data-classbreak="areaBreak3"] {
+        stroke: rgb(253, 210, 120);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(241, 162, 6);
+        fill-opacity: 0.6;
+    }
+
+    path[data-classbreak="areaBreak4"] {
+        stroke: rgb(250, 200, 90);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(226, 154, 11);
+        fill-opacity: 0.6;
+    }
+
+    path[data-classbreak="areaBreak5"] {
+        stroke: rgb(248, 186, 60);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(211, 146, 17);
+        fill-opacity: 0.6;
+    }
+    path[data-classbreak="areaBreak6"] {
+        stroke: rgb(245, 172, 29);
+        stroke-width: 3pt;
+        stroke-opacity: 0.35;
+        fill: rgb(196, 138, 23);
+        fill-opacity: 0.6;
+    }
+
+    @keyframes highlight {
+        100% {
+            fill-opacity: 0.9;
+            stroke-width: 6;
+            stroke: rgb(220, 20, 60);
+        }
+    }
+    @-webkit-keyframes highlight {
+        100% {
+            fill-opacity: 0.9;
+            stroke-width: 6;
+            stroke: rgb(220, 20, 60);
+        }
+    }
+
+    path:hover {
+        cursor: pointer;
+        animation-duration: 0.02s;
+        animation-name: highlight;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.02s;
+        -webkit-animation-name: highlight;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+    }
+    
+    path[data-classbreak="waterworks"] {
+        stroke: rgb(0, 0, 0);
+        stroke-width: 10pt;
+        stroke-opacity: 0.55;
+        fill: rgb(0, 255, 33);
+        fill-opacity: 0.6;
+    }
+
+  
